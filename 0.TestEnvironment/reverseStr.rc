@@ -1,0 +1,20 @@
+fn read_line() -> String {
+    return std::io::stdin().lines().next().unwrap().unwrap();
+}
+
+fn main() {
+    let line : String = read_line();
+//    println!("line is : {}" , line);
+    //let lol : String = String::new();
+    let siz = line.len();
+    let mut i = siz;
+    loop{
+        i-=1;
+        print!("{}",line.chars().nth(i).unwrap());
+        if i == 0 {
+            break;
+        }    
+    } 
+    print!("\n");
+
+}
