@@ -1,0 +1,24 @@
+fn main(){
+    println!("{} days" , 31);
+    print!("something in the way\n");
+    println!("My name is {0} , {1} {0}" , "Bond" , "James");
+    println!("Ali run in the {street_name} , and was very {feeling}" , street_name = "Karegar" , feeling="thirsty");
+    println!("Base 10 repr:               {}",   69420);
+    println!("Base 2 (binary) repr:       {:b}", 69420);
+    println!("Base 8 (octal) repr:        {:o}", 69420);
+    println!("Base 16 (hexadecimal) repr: {:x}", 69420);
+    println!("Base 16 (hexadecimal) repr: {:X}", 69420);
+    println!("{number:>5}", number=1);
+    println!("{number:0>5}", number=1); //Padding with zeros
+    println!("{number:0>width$}", number=1, width=5); //variable width
+    
+}
+/*
+        Printing is handled by a series of macros defined in std::fmt which includes :
+            .format! : write formatted text to String
+            .print!
+            .println!
+            .eprint!
+            .eprintln!
+
+*/
