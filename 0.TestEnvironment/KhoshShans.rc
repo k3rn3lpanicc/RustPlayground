@@ -1,0 +1,52 @@
+//use std::io;
+
+fn read_line() -> String {
+   return std::io::stdin().lines().next().unwrap().unwrap();  
+   
+}
+fn read_int() -> i32{
+    return std::io::stdin().lines().next().unwrap().unwrap().parse().unwrap();
+}
+
+
+fn is_khosh_shans(mut number:i32) -> bool {
+    while number!=0 {
+        if !(number%10==4 || number%10==7){
+            return false;
+        }
+        number/=10;
+    }
+    return true;
+}
+
+
+fn main() {
+    let line = std::io::stdin().lines().next().unwrap().unwrap();
+    println!("You entered : {}" , line);
+    let number : i32 = line.parse().unwrap();
+    println!("{} is {} KhoshShans!" , number , (if is_khosh_shans(number) {""} else {"Not"}));
+    //New things learned : 
+    /*
+        One line if and else :
+            let a:i32 = if(3>2) {3} else {4};
+        Convert from String to int : 
+            let number:i32 = myStr.parse().unwrap(); // can be done also with :
+            let number:i32 = mystr.parse::<i32>().unwrap();
+        Read A String as input :
+            let line = std::io::stdin().lines().next().unwrap().unwrap();
+        
+        Read a number from input directly :
+            let number:i32 = std::io::stdin().lines().next().unwrap().unwrap().parse::<i32>().unwrap(); //LMAOOO!!
+        
+        It is better to make some functions to read number and string instead of using these multiple times! (or maybe macros)
+        Writing simple functions that return String, write functions to read int and string from standard input
+        .
+        .
+        .
+    */
+    let my_str : String = read_line();
+    println!("Readed String is : {}" , my_str); 
+    let number:i32 = read_int();
+    println!("Number : {}" , number);
+    
+}
