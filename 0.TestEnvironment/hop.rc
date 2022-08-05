@@ -1,0 +1,24 @@
+fn read_int() ->i32 {
+    return std::io::stdin().lines().next().unwrap().unwrap().parse().unwrap();
+}
+fn hop(n:i32 , k:i32 , x:i32) -> () {
+    let mut i : i32 = 1;
+    loop{
+        i+=k;
+        if i%x==0 {
+            print!("{} ", i);
+        }
+        if i>n {
+            break;
+        }
+    }
+    print!("\n");
+}
+
+fn main(){
+    println!("Enter numbers n,k,x : ");
+    let n : i32 = read_int();
+    let k : i32 = read_int();
+    let x : i32 = read_int();
+    hop(n,k,x);
+}
