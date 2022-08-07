@@ -1,0 +1,40 @@
+//Functions can return tuples to return multiple values! as tuples can hold any number of values!
+
+fn reverse(pair:(i32,bool)) -> (bool,i32) {
+    // 'let' can be used to bind the members of a tuple to variables :
+    let (i , b) = pair;
+    return (b,i);
+    // **Here i could write (b,i) instead of return statement! we will discuss this in future!!**
+}
+
+fn main() {
+    //A tuple with bunch of different types!
+    let long_tuple = (1u8 , 2u16, 3u32, 4u64, -1i8 , -2i16 , -3i32 , -4i64 , 0.1f32 , 0.2f64, 'a' , true);
+    
+    //Values can be extracted from tuple using tuple indexing : 
+    println!("long tuple first value : {}" , long_tuple.0);
+    println!("long tuple second value : {}" , long_tuple.1);
+    
+    
+    //Tuples can be Tuple members!!
+    let tuple_of_tuples = ((1,'a'), (2,0.1f32) ,  -2i16);
+    println!("Tuple of tuples : {:?}" , tuple_of_tuples); // Question : what is the difference of {} and {:?} ?
+    
+    //***** But long tuples (more than 12 elements) cannot be printed!
+    
+
+    let pair = (1,true);
+    println!("pair is : {:?}" ,pair);
+    
+    println!("The reversed Pair is : {:?}" , reverse(pair));
+    
+    //*** To create one element tuples, the comma is required to tell them apart from a literal surrounded by parantheses :
+    println!("one element tuple : {:?}" , (5u32,));
+    println!("Just and integet  : {:?}" , (5u32));
+ 
+    //Tuples can be destructred to create bindings
+    let tuple = (1, "hello" , 4.5 , true);
+    let (a,b,c,d) = tuple;
+    println!("{:?} , {:?} , {:?} , {:?}" , a,b,c,d);
+   
+}
