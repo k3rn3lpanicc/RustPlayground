@@ -23,7 +23,7 @@ impl Person{
     }    
 }
 
-fn main() -> () {
+fn main() {
     // 1) Int Vectod
     let mut vec : Vec<i32> = vec![5,1,10,2,15];
     vec.sort();
